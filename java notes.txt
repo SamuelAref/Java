@@ -1,0 +1,182 @@
+Java lessons
+
+intro 
+
+for input char we use userInput.next().charAt(0);
+
+public class HelloWorld { //class name must be same as file name
+
+    static String randomString = "String print"; //static used so that other classes can use it
+    
+    static final double PINUM = 3.14; // in java final means constant
+
+    public static void main(String[] args) {
+
+        String a = "sami" + "coll";
+        System.out.println(a);
+
+    }
+}
+
+imports, user inputs 
+
+import java.util.Scanner; //for input
+import java.util.*; //for all classes
+
+public class HelloWorld {
+
+    static Scanner userInput = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.println("your favorite number: ");
+
+        if (userInput.hasNextInt()) {
+
+            int numberEntered = userInput.nextInt(); // nextLine for string
+
+            System.out.println("you entered " + numberEntered);
+        }
+
+        else {
+
+            System.out.println("come on!!");
+            ;
+        }
+
+    }
+}
+
+Use for loops
+
+import java.util.Scanner; //for input
+import java.util.*; //for all classes
+
+public class HelloWorld {
+
+    static Scanner userInput = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        String response = "n";
+
+        while (response.equalsIgnoreCase("n")) { //used to ignore whether upper or lower case is inserted
+
+            System.out.println("Enter response: ");
+            response = userInput.nextLine();
+            System.out.println("knock knock");
+            System.out.println(response);
+
+        }
+
+    }
+}
+
+Exception
+
+import java.util.Scanner; //for input
+import java.util.*; //for all classes
+
+public class HelloWorld {
+
+    // ArithmeticException
+    // InputMismatchException
+
+    static Scanner roll = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.println("Input: ");
+
+        try {
+            System.out.println(roll.nextInt());
+        } catch (Exception e) {
+
+            System.out.println("aaa");
+        }
+
+    }
+
+}
+
+About classes
+
+this is one file
+
+import java.util.Scanner; //for input
+
+import javax.sound.sampled.SourceDataLine;
+
+import java.util.*; //for all classes
+
+public class HelloWorld { // class name with capital
+
+    public final String Tombstone = "Here lies";
+
+    private int health = 500;
+    private int attack = 20;
+    private int movement = 2;
+    private int xposition = 0;
+    private int yposition = 0;
+    private boolean alive = true;
+
+    public String name = "Big monster";
+
+    public int getAttack() {
+
+        return attack;
+
+    }
+
+    public int getHealth() {
+
+        return health;
+
+    }
+
+    public int setHealth(int settinghealth) {
+        health = settinghealth;
+        return health;
+    }
+
+    HelloWorld() {
+
+    }
+
+    void HelloWorld(String names, int healthy) {
+
+        name = names;
+        health = setHealth(healthy);
+
+        System.out.println("Attack = " + getAttack());
+        System.out.println("Health = " + health);
+    }
+
+    public static void main(String[] args) {
+
+        HelloWorld frankenstein = new HelloWorld();
+        frankenstein.HelloWorld("frankenstein", 40);
+        System.out.println(frankenstein.getHealth());
+        frankenstein.setHealth(10);
+        System.out.println(frankenstein.getHealth());
+
+    }
+
+}
+
+this is another file
+
+public class maining {
+
+    public static void main(String[] args) {
+
+        HelloWorld frankenstein = new HelloWorld();
+        frankenstein.HelloWorld("frankenstein", 40);
+        System.out.println(frankenstein.getHealth());
+        frankenstein.setHealth(10);
+        System.out.println(frankenstein.getHealth());
+    }
+}
+
+
+
